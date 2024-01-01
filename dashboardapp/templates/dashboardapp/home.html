@@ -1,13 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Flight Data</title>
-    <!-- Add any additional head elements here -->
+    <title>Economic Indicators</title>
 </head>
 <body>
-    <h1>Monthly Passenger Numbers Over Years</h1>
-    <!-- Render the graph HTML -->
-    <div>{{ graph|safe }}</div>
+    <h1>Economic Indicators Dashboard</h1>
+
+    <!-- Country Selection Form -->
+    <form method="get" action="">
+        <label for="country">Choose a country:</label>
+        <select name="country" id="country">
+            <!-- Populate this with available countries -->
+            <option value="ALL">All Countries</option>
+            <option value="USA">United States</option>
+            <!-- Add more countries or dynamically generate this list -->
+        </select>
+        <button type="submit">Update Data</button>
+    </form>
+
+    <h2>GDP Over Time</h2>
+    <img src="data:image/png;base64,{{ gdp_graphic }}" alt="GDP Chart" />
+
+    <h2>Inflation Rate Over Time</h2>
+    <img src="data:image/png;base64,{{ inflation_graphic }}" alt="Inflation Chart" />
+
 </body>
 </html>
-
